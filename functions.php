@@ -12,23 +12,14 @@ if ( ! isset( $content_width ) ) {
 
 if ( ! function_exists( 'ganap_theme_setup' ) ) {
 	function ganap_theme_setup() {
+		// Add default posts and comments RSS feed links to <head>.
+		add_theme_support( 'automatic-feed-links' );
 
 		// Add title to <head>.
 		add_theme_support('title-tag');
 
-		// Add default posts and comments RSS feed links to <head>.
-		add_theme_support( 'automatic-feed-links' );
-
 		// Enable support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
-
-		// Register primary and secondary navigation menus.  
-		register_nav_menus(
-			array(
-				'primary'   => __( 'Primary Menu', 'ganap_theme_setup' ),
-				'secondary' => __( 'Secondary Menu', 'ganap_theme_setup' )
-			)
-		);
 
 		// Enable support for post formats.
 		add_theme_support( 
@@ -40,6 +31,32 @@ if ( ! function_exists( 'ganap_theme_setup' ) ) {
 				'image',
 				'video'
 			) 
+		);
+
+		// Register primary and secondary navigation menus.  
+		register_nav_menus(
+			array(
+				'primary'   => __( 'Primary Menu', 'ganap' ),
+				'secondary' => __( 'Secondary Menu', 'ganap' )
+			)
+		);
+
+		/*
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => 100,
+				'width'                => 400,
+				'flex-height'          => true,
+				'flex-width'           => true,
+				'header-text'          => array( 'site-title', 'site-description' ),
+				'unlink-homepage-logo' => false, 
+			)
 		);
 	}
 	
