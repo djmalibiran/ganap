@@ -36,7 +36,7 @@ if ( ! function_exists( 'ganap_theme_setup' ) ) {
 		/*
 		 * Add support for core custom logo.
 		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
+		 * @link https://developer.wordpress.org/themes/functionality/custom-logo/
 		 */
 		
 		add_theme_support(
@@ -44,8 +44,8 @@ if ( ! function_exists( 'ganap_theme_setup' ) ) {
 			array(
 				'flex-height'          => true,
 				'flex-width'           => true,
-				'header-text'          => array( 'site-title', 'site-description' ),
-				'unlink-homepage-logo' => false, 
+				// 'header-text'          => array( 'site-title', 'site-description' ),
+				// 'unlink-homepage-logo' => false, 
 			)
 		);
 	}
