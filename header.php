@@ -37,10 +37,15 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     <?php
-                    $custom_logo_id = get_theme_mod('custom_logo');
-                    $logo = wp_get_attachment_image($custom_logo_id, 'full', false, array('loading'=> 'eager', 'decoding'=> 'async'));
+                    /**
+                     * Display the custom logo image if one is set or a text fallback.
+                     *
+                     * @package Ganap
+                     */
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image( $custom_logo_id, 'full', false, array( 'loading' => 'eager', 'decoding' => 'async' ));
 
-                    if (has_custom_logo()) {
+                    if ( has_custom_logo() ) {
                         echo $logo;
                     } else {
                         echo '<h1>' . get_bloginfo('name') . '</h1>';
