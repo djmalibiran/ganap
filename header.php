@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>  data-bs-theme="dark">
+<html <?php language_attributes(); ?> data-bs-theme="dark">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -26,12 +26,11 @@
 
     <?php wp_body_open(); ?>
 
+    <a class="skip-link screen-reader-text" href="#primary">
+        <?php esc_html_e('Skip to content', 'your-theme-name'); ?>
+    </a>
 
-    <div id="page" class="site">
-        <a class="skip-link screen-reader-text" href="#primary">
-            <?php esc_html_e('Skip to content', 'your-theme-name'); ?>
-        </a>
-
+    <header>
 
         <nav class="navbar navbar-expand-md">
             <div class="container">
@@ -42,10 +41,10 @@
                      *
                      * @package Ganap
                      */
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $logo = wp_get_attachment_image( $custom_logo_id, 'full', false, array( 'loading' => 'eager', 'decoding' => 'async' ));
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    $logo = wp_get_attachment_image($custom_logo_id, 'full', false, array('loading' => 'eager', 'decoding' => 'async'));
 
-                    if ( has_custom_logo() ) {
+                    if (has_custom_logo()) {
                         echo $logo;
                     } else {
                         echo '<h1>' . get_bloginfo('name') . '</h1>';
@@ -74,3 +73,9 @@
                 </div>
             </div>
         </nav>
+
+    </header>
+
+    <main id="content">
+
+    
