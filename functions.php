@@ -48,17 +48,26 @@ if ( ! function_exists( 'ganap_theme_setup' ) ) {
 				// 'unlink-homepage-logo' => false, 
 			)
 		);
+    
+    
 	}
-	
 }
 add_action( 'after_setup_theme', 'ganap_theme_setup' );
+
+// Enqueue Custom Style
+function enqueue_custom_style() {
+  wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom-style.css', false, '1.0', 'screen');
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_style');
 
 // Enqueue Bootstrap CSS and JS.
 function enqueue_bootstrap() {
 	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' );
-    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', true);
+  wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', false );
 }
 add_action('wp_enqueue_scripts', 'enqueue_bootstrap');
+
+
 
 // Bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu

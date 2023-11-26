@@ -33,8 +33,8 @@
         </a>
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
                 <a class="navbar-brand" href="/">
                     <?php
                     /**
@@ -63,9 +63,9 @@
                         array(
                             'theme_location' => 'main-menu',
                             'container' => false,
-                            'menu_class' => '',
+                            'menu_class' => 'ms-auto me-0',
                             'fallback_cb' => '__return_false',
-                            'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                            'items_wrap' => '<ul id="%1$s" class="navbar-nav %2$s">%3$s</ul>',
                             'depth' => 2,
                             'walker' => new bootstrap_5_wp_nav_menu_walker()
                         )
