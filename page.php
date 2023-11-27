@@ -1,4 +1,5 @@
 <?php
 get_header();
-the_content();
+get_template_part( 'partials/content', 'page' );
+
 get_footer();
