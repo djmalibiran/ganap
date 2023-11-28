@@ -20,7 +20,7 @@ $event_background = $event_hero_section['event_background'];
 
 <?php if ( $event_hero_section ): ?>
     <!-- Hero Main Wrapper -->
-    <div id="hero" class="position-relative py-5 text-center"<?php echo (!$event_background) ? null : 'style="background-image: url(' . esc_url($event_background["url"]) . '); background-position: center; background-size: cover;"'; ?>>
+    <div id="hero" class="position-relative py-5 text-center" <?php echo (!$event_background) ? null : 'style="background-image: url(' . esc_url($event_background["url"]) . '); background-position: center; background-size: cover;"'; ?>>
         <!-- Semi-transparent Black Overlay -->
         <div class="d-flex position-absolute w-100 h-100 top-0 right-0 bottom-0 left-0 z-0 bg-black bg-opacity-50 user-select-none pe-none" role="presentation" tabindex="0"></div>
 
@@ -34,7 +34,7 @@ $event_background = $event_hero_section['event_background'];
 
             <!-- Event Time -->
             <?php if ( ! empty( $event_date ) ): ?>
-                <time class="d-block display-6 mb-3 text-white" style="--bs-text-opacity: .95;"><?php echo esc_html( $event_date ); ?></time>
+                <p class="d-block display-6 mb-3 text-white" style="--bs-text-opacity: .95;"><?php echo esc_html( $event_date ); ?></p>
             <?php endif; ?>
             
             <!-- Event Short Description -->
