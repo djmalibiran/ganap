@@ -180,3 +180,10 @@ function dmone_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+add_action(
+  'after_setup_theme',
+  function() {
+      add_theme_support( 'html5', [ 'script', 'style' ] );
+  }
+);
