@@ -25,17 +25,17 @@ $event_background = $event_hero_section['event_background'];
 
             <!-- Event Title -->
             <?php if ( ! empty( $event_title ) ): ?>
-                <h1 class="display-1"><?php echo esc_html( $event_title ); ?></h1>
+                <h1 class="display-1 text-white"><?php echo esc_html( $event_title ); ?></h1>
             <?php endif; ?>
 
             <!-- Event Time -->
             <?php if ( ! empty( $event_date ) ): ?>
-                <time class="d-block display-6 mb-3"><?php echo esc_html( $event_date ); ?></time>
+                <time class="d-block display-6 mb-3 text-white" style="--bs-text-opacity: .95;"><?php echo esc_html( $event_date ); ?></time>
             <?php endif; ?>
             
             <!-- Event Short Description -->
             <?php if ( ! empty( $event_short_description ) ): ?>
-                <div class="col-lg-8 mx-auto lead">
+                <div class="col-lg-8 mx-auto lead text-white" style="--bs-text-opacity: .75;">
                     <?php echo wp_kses_post( $event_short_description ); ?>
                 </div>
             <?php endif; ?>
