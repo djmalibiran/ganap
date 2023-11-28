@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> data-bs-theme="dark">
+<html <?php language_attributes(); ?> data-bs-theme="auto">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
