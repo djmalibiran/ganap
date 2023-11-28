@@ -19,9 +19,6 @@
                     'post_status' => 'publish',
                 )
             );
-            // echo '<pre>';
-            // var_dump( $recent_posts );
-            // echo '</pre>';
 
             foreach ( $recent_posts as $post_item ): ?>
                 <div class="col">
