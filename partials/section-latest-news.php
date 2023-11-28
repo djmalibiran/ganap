@@ -22,7 +22,7 @@
 
             foreach ( $recent_posts as $post_item ): ?>
                 <div class="col">
-                    <article class="card h-100">
+                    <article class="card h-100 bg-white">
 
                         <!-- Post Thumbnail -->
                         <?php echo wp_get_attachment_image( get_post_thumbnail_id( $post_item["ID"] ), 'large', false, array( 'class'=> 'img-fluid card-img-top', 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
@@ -30,11 +30,15 @@
                         <div class="card-body">
 
                             <!-- Post Title -->
-                            <h3 class="card-title"><?php echo esc_html( $post_item["post_title"] ); ?></h3>
+                            <h3 class="card-title">
+                                <a href="<?php echo esc_url( get_permalink( $post_item["ID"] ) ); ?>" class="stretched-link text-primary-emphasis link-offset-1 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <?php echo esc_html( $post_item["post_title"] ); ?>
+                                </a>
+                            </h3>
 
                             <!-- Post Excerpt -->
                             <?php if ( ! has_excerpt( $post_item["ID"] ) ): ?>
-                                <p class="card-text text-body-secondary"><?php echo wp_trim_words( $post_item["post_content"], 30, '...' ); ?></p>
+                                <p class="card-text text-body-secondary"><?php echo wp_trim_words( $post_item["post_content"], 20, '...' ); ?></p>
                             <?php else: ?>
                                 <p class="card-text text-body-secondary"><?php echo get_the_excerpt( $post_item["ID"] ); ?></p>
                             <?php endif; ?>
