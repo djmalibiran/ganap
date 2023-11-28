@@ -11,10 +11,6 @@
 
 ?>
 
-</main>
-<aside>
-    <h2>Latest News</h2>
-</aside>
 <footer>
     <h2>footer</h2>
 </footer>
