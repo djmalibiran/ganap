@@ -15,7 +15,7 @@
             <?php
             $recent_posts = wp_get_recent_posts(
                 array(
-                    'numberposts' => 3,
+                    'numberposts' => 6,
                     'post_status' => 'publish',
                 )
             );
