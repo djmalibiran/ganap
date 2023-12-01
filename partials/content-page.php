@@ -10,6 +10,6 @@
  */
 ?>
 
-<div class="container">
+<div class="container py-5">
     <?php the_content(); ?>
 </div>
