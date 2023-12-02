@@ -13,7 +13,7 @@
 $page_title = get_the_title();
 $page_id = get_queried_object_id();
 
-if ( ! empty( $page_title ) ) : ?>
+if ( is_page() && ! empty( $page_title ) ) : ?>
     <!-- Hero Main Wrapper -->
     <div id="hero" class="position-relative py-5 text-center" <?php echo ( ! has_post_thumbnail( $page_id ) ) ? null : 'style="background-image: url(' . esc_url( wp_get_attachment_image_url( get_post_thumbnail_id( $page_id ), 'full' ) ) . '); background-position: center; background-size: cover;"'; ?>>
          <!-- Semi-transparent Black Overlay -->
@@ -22,6 +22,17 @@ if ( ! empty( $page_title ) ) : ?>
             <div class="container py-5 my-5 position-relative z-1">
                 <!-- Page Title -->
                 <h1 class="display-1 text-white"><?php echo esc_html( $page_title ); ?></h1>
+            </div>
+        </div>
+    </div>
+<?php
+elseif ( is_archive() ) : ?>
+    <!-- Hero Main Wrapper -->
+    <div id="hero" class="position-relative py-5 text-center bg-secondary-subtle">
+            <!-- Hero Content Container -->
+            <div class="container py-5 my-5 position-relative z-1">
+                <!-- Page Title -->
+                <h1 class="display-1"><?php echo esc_html( $page_title ); ?></h1>
             </div>
         </div>
     </div>
