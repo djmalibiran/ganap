@@ -32,7 +32,7 @@ elseif ( is_archive() ) : ?>
             <!-- Hero Content Container -->
             <div class="container py-5 my-5 position-relative z-1">
                 <!-- Page Title -->
-                <h1 class="display-1"><?php echo esc_html( $page_title ); ?></h1>
+                <h1 class="display-1"><?php echo the_archive_title() ?></h1>
             </div>
         </div>
     </div>
